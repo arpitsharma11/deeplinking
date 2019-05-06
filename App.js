@@ -16,15 +16,25 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-import { createSwitchNavigator,createAppContainer } from 'react-navigation';
+import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import Home from './src/home';
-import Profile from './src/profile';
+import ProfileNavContainer from './src/profileNav';
 import Setting from './src/setting';
+import Deatils from './src/details';
+import Profile from './src/profile';
+import Photos from './src/photos';
 
-const App = createSwitchNavigator({
+const App = createStackNavigator({
   Home: { screen: Home },
-  Profile: { screen: Profile },
+  ProfileNav: { screen: createBottomTabNavigator({
+    Profile: { screen: Profile },
+    Deatils: { screen: Deatils },
+    Photos: { screen: Photos}
+  },{
+    initialRouteName : 'Profile',
+    //headerMode : 'none'
+}) },
   Setting: { screen: Setting },
 },{
   initialRouteName : 'Home'

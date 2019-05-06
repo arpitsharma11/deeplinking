@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { Text } from 'react-native';
 
-class Setting extends Component{
+class Photos extends Component{
 
     static navigationOptions = {
-        title: 'Setting',
+        title: 'Photos',
     };
 
     render(){
         return(
-            <Text>Setting</Text>
+            <Text>Photos</Text>
         )
     }
 }
 
-export default Setting;
+export default Photos;

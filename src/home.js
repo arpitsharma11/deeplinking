@@ -28,10 +28,11 @@ class Home extends Component{
     navigate = (url) => {
         const { navigate } = this.props.navigation;
         const route = url.replace(/.*?:\/\//g, '');
-        const routeName = route.split('/')[0];
-        //alert(route);
+        const routeName = route.split('/')[1];
+        //alert(routeName);
         if (routeName === 'profile') {
-            navigate('Profile',{} )
+            navigate('ProfileNav',{} )
+            
         } else if (routeName === 'setting') {
             navigate('Setting',{} )
         } ;
